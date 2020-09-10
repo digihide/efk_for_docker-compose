@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  nginx:
+    image: php
+    container_name: php
+    restart: always
+    ports:
+      - 81:81
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: 192.168.0.102:24224
+        tag: fluent
